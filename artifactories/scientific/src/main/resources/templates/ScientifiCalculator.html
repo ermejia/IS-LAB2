@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>LAB 2 Scientific Calculator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body bgcolor="#009933">
+
+<h1>SCIENTIFIC CALCULATOR</h1>
+<form action="#" th:action="@{/calculate}" th:object="${calculateOperation}" method="POST">
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Value 1</span>
+        <input type="text" class="form-control" aria-label="Username" th:field="*{a}">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Value 2</span>
+        <input type="text" class="form-control" aria-label="Username" th:field="*{b}">
+    </div>
+    <p>
+        <input type="submit" class="btn btn-warning" name="expo" value="x^2"/>
+        <input type="submit" class="btn btn-warning" name="absolute" value="|x|"/>
+        <input type="submit" class="btn btn-warning" name="division" value="x/y"/>
+        <input type="submit" class="btn btn-warning" name="factorial" value="x!"/>
+        <input type="submit" class="btn btn-warning" name="logaritm" value="log x"/>
+        <input type="submit" class="btn btn-warning" name="logarin" value="logN x"/>
+    </p>
+    <h3><p th:text="'Resultado= ' + ${result}"/></h3>
+    </form>
+</body>
+</html>
